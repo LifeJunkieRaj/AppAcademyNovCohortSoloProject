@@ -1,8 +1,8 @@
-"""Had to add comment ID to Vote model along with ForeignKey
+"""duplicate versions fix
 
-Revision ID: 7e9ec700f289
-Revises: ffdc0a98111c
-Create Date: 2021-04-01 16:10:41.589698
+Revision ID: 52140fcd7dce
+Revises: 
+Create Date: 2021-04-02 19:38:42.120271
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '7e9ec700f289'
-down_revision = 'ffdc0a98111c'
+revision = '52140fcd7dce'
+down_revision = None
 branch_labels = None
 depends_on = None
 
