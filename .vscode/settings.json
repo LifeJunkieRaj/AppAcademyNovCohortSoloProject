@@ -2,5 +2,9 @@
     "python.pythonPath": "/home/fullstackjunkie/.pyenv/versions/3.8.3/bin/python",
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": false,
-    "python.linting.pycodestyleEnabled": true
+    "python.linting.pycodestyleEnabled": true,
+    "cSpell.words": [
+        "guruud",
+        "reduxjs"
+    ]
 }
