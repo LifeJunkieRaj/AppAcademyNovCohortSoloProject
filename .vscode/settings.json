@@ -4,6 +4,8 @@
     "python.linting.enabled": false,
     "python.linting.pycodestyleEnabled": true,
     "cSpell.words": [
+        "FOREX",
+        "Lyft",
         "guruud",
         "reduxjs"
     ]
