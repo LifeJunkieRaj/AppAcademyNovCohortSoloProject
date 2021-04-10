@@ -1,36 +1,22 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addComment } from "../../store/comment";
+import React from 'react';
 import "./Comment.css";
 
-const CommentForm = ({ setClicked, sip }) => {
-  const user = useSelector((state) => state.session.user);
-  const dispatch = useDispatch();
-  const [comment, setComment] = useState("");
-
-  const handleSubmit = () => {
-    const new_comment = {
-      user_id: user.id,
-      sip_id: sip.id,
-      comment,
-    };
-    dispatch(addComment(new_comment));
-    setClicked(false)
-    window.location.reload();
-  };
-
+function Comment({comments}) {
   return (
-    <div className="comment-container">
-      <textarea
-        onChange={(e) => setComment(e.target.value)}
-        placeholder="Leave a comment here!"
-        value={comment}
-      />
-      <div className="comment_button">
-        <button onClick={handleSubmit}>Post</button>
-      </div>
+    <div>
+      <h1 className="comm_h1">Comments</h1>
+      {comments.map(c => 
+        
+          <div className="comment_container" key={c.id}>
+            <div className="user_id_comm_highlight">User ID: {c.user_id} SAID</div>
+            {c.comment}  
+          </div>
+        
+        )}
+       
     </div>
-  );
-};
+  )
+}
 
-export default CommentForm;
+export default Comment;
+

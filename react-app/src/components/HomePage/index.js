@@ -23,9 +23,15 @@ const HomePage = () => {
 
     return (
           <div className="image_container">
+              <h1 className="home_page_title">Ask A Guru</h1>
+                <div className="question_button">
+                    Post Your Question
+                </div>
+                <div className="flex_container">
             {ask_a_guru ? ask_a_guru.map(q => {
-               return <AskAGuru key={q.id} question={q.question} id={q.id} />
+               return <AskAGuru key={q.id} question={q} />
           }): null }
+          </div>
           </div>
     )
     
