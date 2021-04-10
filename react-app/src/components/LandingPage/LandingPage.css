@@ -97,11 +97,17 @@
 .category_container {
     width: 700px;
     height: 75px;
+    padding: 10px;
     background-color: white;
     border-radius: 10px;
 }
 
 .cat_flex_container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
     width: 700px;
     height: 0px;
 }

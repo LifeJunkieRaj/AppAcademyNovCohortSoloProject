@@ -8,16 +8,16 @@
 
 .question_content {
     padding: 10px;
-    font-weight: 700;
+    font-weight: 900;
     color: red;
 }
 
-.flex_container {
+.flex_container_res_comm {
     display: flex;
     padding: 10px
 }
 
-.flex_item {
+.flex_item_res_comm {
     width: 45%;
     padding: 10px;
     border: 0.5px solid rgb(192, 192, 192);
@@ -25,7 +25,8 @@
 }
 
 .guru_id_highlight {
-    color: blue
+    color: blue;
+    margin-top: 10px;
 }
 
 .response_button, .comment_button {
@@ -40,4 +41,22 @@
 
 .far {
     margin-right: 5px;
+}
+
+.cat_container_box {
+    border: 0.5px solid rgb(255, 42, 42);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.cat_description_divider {
+    background-color: #ff0000;
+    height: 4px;
+    width: 50px;
+    margin: 20px auto;
+}
+
+.cat_name {
+    text-align: center;
+    font-weight: 1000;
 }

@@ -8,7 +8,7 @@ function Comment({comments}) {
       {comments.map(c => 
         
           <div className="comment_container" key={c.id}>
-            <div className="user_id_comm_highlight">User ID: {c.user_id} SAID</div>
+            <div className="user_id_comm_highlight">User ID: {c.user_id} ANSWERED:</div>
             {c.comment}  
           </div>
         
