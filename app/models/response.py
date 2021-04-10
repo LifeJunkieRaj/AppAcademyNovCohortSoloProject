@@ -16,7 +16,7 @@ class Response(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
-            "user": self.user.to_dict(),
-            "ask_a_guru": self.ask_a_guru,
+            "user_id": self.user_id,
+            "ask_a_guru_id": self.ask_a_guru_id,
             "response": self.response
         }

@@ -16,14 +16,18 @@ function App() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const func = async() => {
-      const user = await dispatch(authenticate());
-      if (!user.errors) {
-        setAuthenticated(true);
-      }
-      setLoaded(true);
-    };
-    func();
+    // const func = async() => {
+      // const user = await dispatch(authenticate());
+      dispatch(authenticate()).then(()=> {
+        setLoaded(true);
+        setAuthenticated(true)
+      });
+      // if (!user.errors) {
+        //   setAuthenticated(true);
+        // }
+      // setLoaded(true);
+    // };
+    // func();
   }, [dispatch]);
 
   if (!loaded) {

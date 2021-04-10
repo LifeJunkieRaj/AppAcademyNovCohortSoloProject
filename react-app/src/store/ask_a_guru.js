@@ -6,20 +6,21 @@ const load = (questions) => ({
 });
 
 export const getCurrentUserQuestions = (userId) => async (dispatch) => {
-    const response = await fetch(`/api/ask_a_guru_routes/${userId}`, {
+    console.log()
+    const response = await fetch(`/api/ask_a_guru/${userId}/`, {
         headers: {
             "Content-Type": "application/json",
         },
     });
-
+    console.log(response.status, response.ok)
     if (response.ok) {
-        const questions = await response.json();
+        const {questions} = await response.json();
         console.log('Here are the questions ~~~~~~>', questions)
         dispatch(load(questions));
     }
 };
 
-const initialState = {};
+const initialState = {questions: []};
 const askAGuruReducer = (state=initialState, action) => {
     let newState;
     switch (action.type){

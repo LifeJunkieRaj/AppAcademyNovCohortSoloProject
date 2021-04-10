@@ -1,0 +1,11 @@
+.question_container {
+    width: 300px;
+    height: 150px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.question_content {
+    padding: 10px;
+
+}
