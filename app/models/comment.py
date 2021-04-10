@@ -16,7 +16,7 @@ class Comment(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
-            "ask_a_guru": self.ask_a_guru,
+            "ask_a_guru_id": self.ask_a_guru_id,
             "comment": self.comment,
-            "user": self.user.to_dict()
+            "user_id": self.user_id
         }

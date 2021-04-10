@@ -19,6 +19,4 @@ class Category(db.Model):
             "description": self.description,
             "type": self.type,
             "img_src": self.img_src,
-            "ask_a_guru": [ask_a_guru.to_dict() for ask_a_guru in
-                            self.ask_a_guru]
         }

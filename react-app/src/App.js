@@ -5,8 +5,10 @@ import { authenticate } from "./store/session";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
-// import ProtectedRoute from "./components/auth/ProtectedRoute";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+import User from "./components/User";
 import LandingPage from "./components/LandingPage";
+import HomePage from "./components/HomePage"
 
 function App() {
   const dispatch = useDispatch();
@@ -14,14 +16,18 @@ function App() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const func = async() => {
-      const user = await dispatch(authenticate());
-      if (!user.errors) {
-        setAuthenticated(true);
-      }
-      setLoaded(true);
-    };
-    func();
+    // const func = async() => {
+      // const user = await dispatch(authenticate());
+      dispatch(authenticate()).then(()=> {
+        setLoaded(true);
+        setAuthenticated(true)
+      });
+      // if (!user.errors) {
+        //   setAuthenticated(true);
+        // }
+      // setLoaded(true);
+    // };
+    // func();
   }, [dispatch]);
 
   if (!loaded) {
@@ -48,13 +54,13 @@ function App() {
         </Route>
         {/* <ProtectedRoute path="/users" exact={true} authenticated={authenticated}>
           <UsersList/>
-        </ProtectedRoute>
+        </ProtectedRoute> */}
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
-          <h1>My Home Page</h1>
-        </ProtectedRoute> */}
+        <ProtectedRoute path="/home" exact={true} authenticated={authenticated}>
+          <HomePage authenticated={authenticated}/>
+        </ProtectedRoute> 
       </Switch>
     </BrowserRouter>
   );

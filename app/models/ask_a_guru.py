@@ -25,31 +25,27 @@ class AskAGuru (db.Model):
             "user_id": self.user_id,
             "category_id": self.category_id,
             "rating": self.rating,
-            "question": question.rating,
+            "question": self.question,
             "img_src": self.img_src,
             "created_at": self.created_at,
             "user": self.user.to_dict(),
-            "category": self.category.to_simple_dict(), 
             "comment": [comment.to_dict() for comment in self.comments],
             "response": [response.to_dict() for response in self.responses]
-
         }
-
+        
     def to_simple_dict(self):
         return {
-            "id":self.id,
+            "id": self.id,
             "user_id": self.user_id,
             "category_id": self.category_id,
             "rating": self.rating,
-            "question": question.rating,
+            "question": self.question,
             "img_src": self.img_src,
             "created_at": self.created_at,
             "user": self.user.to_dict(),
-            "category": self.category.to_dict(), 
-            "comments": [comment.to_dict() for comment in self.comments],
-            "responses": [response.to_dict() for response in self.responses]
-        }
+                   }
 
+ 
     def get_rating(self): 
         return self.rating
 
