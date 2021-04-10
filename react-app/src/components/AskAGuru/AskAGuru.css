@@ -1,11 +1,43 @@
 .question_container {
-    width: 300px;
-    height: 150px;
-    background-color: white;
-    margin: 0 auto;
+    width: 500px;
+    background-color: rgb(241, 233, 233);
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .question_content {
     padding: 10px;
+    font-weight: 700;
+    color: red;
+}
 
+.flex_container {
+    display: flex;
+    padding: 10px
+}
+
+.flex_item {
+    width: 45%;
+    padding: 10px;
+    border: 0.5px solid rgb(192, 192, 192);
+    border-radius: 10px;
+}
+
+.guru_id_highlight {
+    color: blue
+}
+
+.response_button, .comment_button {
+    padding: 7px 10px;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    width: 30%;
+    line-height: 42px;
+    text-align: center;
+}
+
+.far {
+    margin-right: 5px;
 }
