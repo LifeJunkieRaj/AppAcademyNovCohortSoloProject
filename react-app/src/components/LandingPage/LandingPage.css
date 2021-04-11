@@ -1,5 +1,5 @@
 .landing-background-container {
-    background-image: url("../../site-images/closeup_cafe.jpeg");
+    background-image: url("../../site-images/red-austin-distel-VwsuhJ9uee4-unsplash.jpg");
     background-attachment: local;
     background-size: cover;
     background-position: center;
@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     color: white;
+    
 }
 
 .landing-button-container {
@@ -75,8 +76,24 @@
     margin: 20px auto;
 }
 
-.landing-message {
-    text-align: center;
+.landing-tagline, .landing-message {
+    width: 30%;
+        
+}
+
+.landing-tagline h3 {
+    text-align: left;
+}
+
+.landing-message h3 {
+    text-align: right;
+}
+
+.landing-tagline h3, .landing-message h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 75px 15px;
+    color: white;    
 }
 
 .landing-container-right {
@@ -92,6 +109,8 @@
     height: 300px;
     background-image: url("../../site-images/Logo_editable.jpg");
     background-size: cover;
+    margin: 10px auto;
+    opacity: 0.7;
 }
 
 .category_container {

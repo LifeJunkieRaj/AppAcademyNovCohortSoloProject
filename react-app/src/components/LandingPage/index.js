@@ -23,10 +23,10 @@ const LandingPage = ({ authenticated }) => {
                         </div>
                     </div>
                     <div className="landing-container">
+                    <div className="landing-tagline">
+                                <h3>Tired of the 9 to 5 grind.  Want to stop making somebody else rich and be your own boss but don't know where to start... It's time to get guruud!!!</h3>
+                            </div>
                         <div className="landing-container-left">
-                            <div className="landing-shopping-bag">
-                                <i className="fas fa-shopping-bag"></i>
-                            <div/>
                             <div className="landing-site-title">
                                 <div className="logo"></div>
                             </div>
@@ -65,15 +65,11 @@ const LandingPage = ({ authenticated }) => {
                                         <NavLink to="/" exact={true}><i class="fas fa-globe"></i>  Entrepreneurship 101</NavLink>
                                     </li>
                                </ul>
-                            </div>
-                            <div className="landing-tagline">
-                                <p>Tired of the 9 to 5 grind.  Want to stop making somebody else rich and be your own boss but don't know where to start... Get guruud!!!</p>
-                            </div>
-                            <div className="landing-color-divider"></div>
-                            <div className="landing-message">
-                                <h1>The only place online where the budding entrepreneurs of tomorrow, can get the experienced advice from the successful entrepreneurs of yesterday and today!</h1>
-                            </div>
+                            </div>                         
                         </div>
+                        <div className="landing-message">
+                                <h3>The only place online where the budding entrepreneurs of tomorrow, can get the experienced advice from the successful entrepreneurs of yesterday and today!</h3>
+                            </div>
                         <div className="landing-container-right">
                             <div className="landing-logo-img">
                                 {/* <img src={closeup_cafe} alt=""/> */}
@@ -81,7 +77,7 @@ const LandingPage = ({ authenticated }) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </>
    )
 };
