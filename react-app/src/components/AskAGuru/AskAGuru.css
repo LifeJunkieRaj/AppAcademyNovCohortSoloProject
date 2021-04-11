@@ -37,6 +37,7 @@
     width: 30%;
     line-height: 42px;
     text-align: center;
+    cursor: pointer;
 }
 
 .far {

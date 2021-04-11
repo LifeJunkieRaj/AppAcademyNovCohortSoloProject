@@ -1,0 +1,26 @@
+.navbar_flex_container {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.menu_container {
+    position: relative;
+    top: 0;
+}
+
+.navbar_menu {
+    position: absolute;
+    top: 100%;
+    left: -300%;
+    display: none;
+}
+
+.navbar_title {
+    margin-left: 100px;
+    color: rgb(255, 51, 0)
+}
+
+.menu_dropdown {
+    cursor: pointer;
+}
