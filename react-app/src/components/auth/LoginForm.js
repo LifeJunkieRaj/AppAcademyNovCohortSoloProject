@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, NavLink } from "react-router-dom";
 import { login } from "../../services/auth";
+import "./LoginForm.css";
 
 const LoginForm = ({ authenticated, setAuthenticated }) => {
   const [errors, setErrors] = useState([]);
@@ -30,34 +31,41 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   }
 
   return (
-    <form onSubmit={onLogin}>
+    <div className="login_form_container">
+    <form className="login_form" onSubmit={onLogin}>
+      <h1>Guru Time</h1>
       <div>
         {errors.map((error) => (
           <div>{error}</div>
         ))}
       </div>
       <div>
-        <label htmlFor="email">Email</label>
+        {/* <label htmlFor="email">Email</label> */}
         <input
           name="email"
           type="text"
           placeholder="Email"
           value={email}
           onChange={updateEmail}
+          className="login_email"
         />
       </div>
       <div>
-        <label htmlFor="password">Password</label>
+        {/* <label htmlFor="password">Password</label> */}
         <input
           name="password"
           type="password"
           placeholder="Password"
           value={password}
           onChange={updatePassword}
+          className="login_password"
         />
-        <button type="submit">Login</button>
+        
       </div>
+      <div><button className="login_button" type="submit">Login</button></div>
+      <p>Not a member? <NavLink to="/sign-up">SIGN UP</NavLink></p>
     </form>
+    </div>
   );
 };
 

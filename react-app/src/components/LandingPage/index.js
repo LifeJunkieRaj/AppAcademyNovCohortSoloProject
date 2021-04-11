@@ -17,7 +17,7 @@ const LandingPage = ({ authenticated }) => {
                             className="landing-button-div login-button"
                         >Log In
                         </div>
-                        <div onClick={() => history.push("/signup")}
+                        <div onClick={() => history.push("/sign-up")}
                             className="landing-button-div login-button"
                         >Sign Up
                         </div>
