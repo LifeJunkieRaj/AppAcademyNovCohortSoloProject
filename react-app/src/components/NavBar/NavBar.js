@@ -1,7 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
+import CreateQuestion from '../AskAGuru/AAGquestion'
 import "./NavBar.css"
+
 
 
 
@@ -23,6 +25,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
     if(authenticated) {
       displayLinks = (
         <nav>
+          <CreateQuestion />
       <ul className="navbar_flex_container">
         {/* <li>
           <NavLink to="/" exact={true} activeClassName="active">

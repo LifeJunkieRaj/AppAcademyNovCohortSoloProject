@@ -1,0 +1,28 @@
+.modal_background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+    width: 500px;
+    height: 500px;
+    background-color: white;
+}
+
+.AAG_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(241, 233, 233);
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+}

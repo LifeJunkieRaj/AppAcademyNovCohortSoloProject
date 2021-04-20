@@ -2,9 +2,19 @@ import React from 'react';
 import "./AskAGuru.css";
 import Comment from "../Comment";
 import Response from "../Response";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteQuestion, getCurrentUserQuestions } from "../../store/ask_a_guru"
 
 function AskAGuru({question}) {
-  return (
+  const currentUser = useSelector(state => state.session.user)
+  const dispatch = useDispatch()
+  const deleteQuestionAAG = () => {
+    
+    deleteQuestion(question.id)
+      .then(() => dispatch(getCurrentUserQuestions(currentUser.id)))  
+  }
+
+    return (
     <div className="question_container">
       <div className="cat_container_box">
         <div className="cat_name">
@@ -38,6 +48,7 @@ function AskAGuru({question}) {
             <div className="down"><i className="fas fa-chevron-down"></i></div>
           </div>
         </div>
+        {currentUser && currentUser.id === question.user_id && <button onClick={deleteQuestionAAG} className="delete_AAG_button">Delete</button>}
     </div>
   )
 }

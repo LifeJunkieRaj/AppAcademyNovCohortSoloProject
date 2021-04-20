@@ -1,5 +1,5 @@
 from .db import db
-
+from datetime import datetime
 
 class AskAGuru (db.Model):
     __tablename__ = "ask_a_guru"
@@ -10,7 +10,7 @@ class AskAGuru (db.Model):
     rating = db.Column(db.Integer, default=0)
     question = db.Column(db.String(1000), nullable=False)
     img_src = db.Column(db.String)
-    created_at = db.Column(db.Date)
+    created_at = db.Column(db.Date, default=datetime.now())
 
     user = db.relationship("User", back_populates="ask_a_guru")
     category = db.relationship("Category", back_populates="ask_a_guru")

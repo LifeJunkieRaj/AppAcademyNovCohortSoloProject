@@ -18,5 +18,6 @@ class Response(db.Model):
             "id": self.id,
             "user_id": self.user_id,
             "ask_a_guru_id": self.ask_a_guru_id,
-            "response": self.response
+            "response": self.response,
+            "username": self.user.username,
         }

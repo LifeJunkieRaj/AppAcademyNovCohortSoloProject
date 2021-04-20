@@ -37,11 +37,6 @@ This is the backend for the Flask React project.
    ```bash
    flask run
    ```
-
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
-
-***
-*IMPORTANT!*
    If you add any python dependencies to your pipfiles, you'll need to regenerate your requirements.txt before deployment.
    You can do this by running:
 
