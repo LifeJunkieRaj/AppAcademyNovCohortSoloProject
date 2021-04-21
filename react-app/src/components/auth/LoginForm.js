@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Redirect, NavLink } from "react-router-dom";
 import { login } from "../../store/session";
 import "./LoginForm.css";
@@ -9,9 +9,11 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const user = useSelector(state => state.session.user)
+  const loaded = useSelector(state => state.session.loaded)
 
   const demoLogin = () => {
-    dispatch(login("demo@lition", "password"))
+    dispatch(login("demo@lition.com", "password"))
   }
 
   const onLogin = async (e) => {
@@ -28,8 +30,8 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     setPassword(e.target.value);
   };
 
-  if (authenticated) {
-    return <Redirect to="/" />;
+  if (user) {
+    return <Redirect to="/"/>;
   }
 
   return (
