@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
+import { useSelector } from "react-redux"
 
 function User() {
   const [user, setUser] = useState({});
   // Notice we use useParams here instead of getting the params
   // From props.
   const { userId }  = useParams();
+
+  const sessionUser = useSelector(state => state.session.user)
+  const loaded = useSelector(state => state.session.loaded)
 
   useEffect(() => {
     if (!userId) {
@@ -18,8 +22,8 @@ function User() {
     })();
   }, [userId]);
 
-  if (!user) {
-    return null;
+  if (!sessionUser && loaded) {
+    return <Redirect to="/"></Redirect>;
   }
 
   return (

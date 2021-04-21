@@ -48,6 +48,7 @@ def login():
 
 @auth_routes.route('/logout')
 def logout():
+    print("anything <========HERE HERE HERE")
     """
     Logs a user out
     """

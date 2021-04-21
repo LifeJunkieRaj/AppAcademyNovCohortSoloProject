@@ -1,11 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Redirect, useHistory, NavLink } from "react-router-dom";
 // import closeup_cafe from "../../site-images/closeup_cafe.jpeg"
 import "./LandingPage.css";
 
 const LandingPage = ({ authenticated }) => {
+    const user = useSelector(state => state.session.user)
     const history = useHistory();
-    if (authenticated) {
+    if (user) {
         return <Redirect to="/home" />
     }
 

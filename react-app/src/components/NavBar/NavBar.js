@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from "react-redux";
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import CreateQuestion from '../AskAGuru/AAGquestion'
@@ -7,8 +8,10 @@ import "./NavBar.css"
 
 
 
-const NavBar = ({ authenticated, setAuthenticated }) => {
+const NavBar = () => {
   let visible = false;
+
+  const user = useSelector((state) => state.session.user)
   let showMenu = () => {
     let menu = document.querySelector(".navbar_menu");
     if (visible == false) {
@@ -22,7 +25,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
   }
 
   let displayLinks;
-    if(authenticated) {
+    if(user) {
       displayLinks = (
         <nav>
           <CreateQuestion />
@@ -51,7 +54,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
         <li>
           <div className="menu_container">
             <i onClick={showMenu} className="fas fa-caret-square-down menu_dropdown"></i>
-            <div className="navbar_menu"> <LogoutButton setAuthenticated={setAuthenticated} /></div>
+            <div className="navbar_menu"> <LogoutButton /></div>
           </div>
          
         </li>

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Redirect } from "react-router-dom";
 import { getCurrentUserQuestions, show } from "../../store/ask_a_guru";
 import AskAGuru from "../../components/AskAGuru";
 
@@ -14,15 +15,18 @@ const HomePage = () => {
     let ask_a_guru = useSelector(state => state.questions.questions);
     const user = useSelector(state => state.session.user);
     ask_a_guru && (ask_a_guru = Object.values(ask_a_guru))
+    const userLoaded = useSelector(state => state.session.loaded);
 
     const showModal = () => dispatch(show())
 
     useEffect(() => {
-        console.log("Look Mom, no hands------->", ask_a_guru)
+        console.log("Look Mom, no hands------->", user)
         user && dispatch(getCurrentUserQuestions(user.id))
     }, [dispatch, user])
 
-    return (
+    if (userLoaded && !user) return <Redirect to="/"></Redirect>
+        
+    return  (
         
         <div className="image_container">
               <div></div>

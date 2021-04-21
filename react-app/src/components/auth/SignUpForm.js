@@ -1,26 +1,37 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Redirect, NavLink } from 'react-router-dom';
-import { signUp } from '../../services/auth';
+import { signUp } from '../../store/session';
 import "./SignUpForm.css";
 
-const SignUpForm = ({authenticated, setAuthenticated}) => {
+const SignUpForm = () => {
+  const dispatch = useDispatch()
   const [username, setUsername] = useState("");
+  const [first_name, setFirst_name] = useState("");
+  const [last_name, setLast_name] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
+  const user = useSelector(state => state.session.user)
+  const loaded = useSelector(state => state.session.loaded)
 
-  const onSignUp = async (e) => {
+  const onSignUp = (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const user = await signUp(username, email, password);
-      if (!user.errors) {
-        setAuthenticated(true);
+      dispatch(signUp(username, first_name, last_name, email, password));
       }
-    }
   };
 
   const updateUsername = (e) => {
     setUsername(e.target.value);
+  };
+
+  const updateFirstName = (e) => {
+    setFirst_name(e.target.value);
+  };
+
+  const updateLastName = (e) => {
+    setLast_name(e.target.value);
   };
 
   const updateEmail = (e) => {
@@ -35,9 +46,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
     setRepeatPassword(e.target.value);
   };
 
-  if (authenticated) {
-    return <Redirect to="/" />;
-  }
+  if(user) return <Redirect to="/" />
 
   return (
     <div className="signup_form_container">
@@ -52,6 +61,28 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           value={username}
           className="signup_username"
           placeholder="Enter Username"
+        ></input>
+      </div>
+      <div>
+        {/* <label>User Name</label> */}
+        <input
+          type="text"
+          name="first_name"
+          onChange={updateFirstName}
+          value={first_name}
+          className="signup_first_name"
+          placeholder="Enter First Name"
+        ></input>
+      </div>
+      <div>
+        {/* <label>User Name</label> */}
+        <input
+          type="text"
+          name="last_name"
+          onChange={updateLastName}
+          value={last_name}
+          className="signup_last_name"
+          placeholder="Enter Last Name"
         ></input>
       </div>
       <div>

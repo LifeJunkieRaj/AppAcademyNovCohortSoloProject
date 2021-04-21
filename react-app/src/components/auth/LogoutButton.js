@@ -1,18 +1,17 @@
 import React from "react";
-import { logout } from "../../services/auth";
+import { logout } from "../../store/session";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import "./LogoutButton.css";
 
-const LogoutButton = ({setAuthenticated}) => {
+const LogoutButton = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const onLogout = async (e) => {
-    await logout();
-    setAuthenticated(false);
-    // dispatch(logout());
-    return history.push("/");
+  const onLogout = (e) => {
+   
+    dispatch(logout());
+    
   };
 
   return <div className="logout_button" onClick={onLogout}>Logout</div>;

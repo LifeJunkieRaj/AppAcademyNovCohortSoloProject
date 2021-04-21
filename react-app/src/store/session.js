@@ -22,11 +22,11 @@ export const authenticate = () => async (dispatch) => {
       "Content-Type": "application/json",
     },
   });
-  if (response.ok) {
-    const user = await response.json();
+  const user = await response.json();
+  if (!user.errors) {
     dispatch(getUser(user))
     return user;
-  }
+  } else dispatch(getUser(null))
 };
 
 export const login = (email, password) => async (dispatch) => {
@@ -45,19 +45,14 @@ export const login = (email, password) => async (dispatch) => {
   if (!user.errors) {
     dispatch(getUser(user));
     return user;
-  }
-  return user;
+  } else throw new Error(user.errors[0])
+  
 };
 
 export const logout = () => async (dispatch) => {
-  const response = await fetch("/api/auth/logout/", {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  await response.json();
+  await fetch("/api/auth/logout");
   dispatch(removeUser());
-  return response;
+
 };
 
 export const signUp = (
@@ -67,7 +62,7 @@ export const signUp = (
   email,
   password
 ) => async (dispatch) => {
-  const response = await fetch("/api/auth/signup/", {
+  const response = await fetch("/api/auth/signup", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -87,7 +82,7 @@ export const signUp = (
   }
 };
 
-let initialState = { user: null };
+let initialState = { user: null, loaded:false };
 
 const sessionReducer = (state = initialState, action) => {
   let newState;
@@ -95,14 +90,16 @@ const sessionReducer = (state = initialState, action) => {
     case GET_USER:
       // newState = Object.assign({}, state);
       // newState.user = action.user;
-      return { ...state, user: action.user };
+      return { ...state, user: action.user, loaded:true };
     case CREATE_USER:
       newState = Object.assign({}, state);
       newState.user = action.user;
+      newState.loaded = true;
       return newState;
     case REMOVE_USER:
       newState = Object.assign({}, state)
       newState.user = null;
+      newState.loaded = true;
       return newState;
     default:
       return state;

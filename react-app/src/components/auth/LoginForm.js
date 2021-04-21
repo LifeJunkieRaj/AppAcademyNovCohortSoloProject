@@ -1,22 +1,24 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Redirect, NavLink } from "react-router-dom";
-import { login } from "../../services/auth";
+import { login } from "../../store/session";
 import "./LoginForm.css";
 
 const LoginForm = ({ authenticated, setAuthenticated }) => {
+  const dispatch = useDispatch()
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const demoLogin = () => {
+    dispatch(login("demo@lition", "password"))
+  }
+
   const onLogin = async (e) => {
     e.preventDefault();
-    const user = await login(email, password);
-    if (!user.errors) {
-      setAuthenticated(true);
-    } else {
-      setErrors(user.errors);
-    }
-  };
+    dispatch(login(email, password))
+      .catch(setErrors)      
+   };
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
@@ -64,6 +66,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
       </div>
       <div><button className="login_button" type="submit">Login</button></div>
       <p>Not a member? <NavLink to="/sign-up">SIGN UP</NavLink></p>
+      <button className="demo_user_button" onClick={demoLogin} type="button">Demo User Login</button>
     </form>
     </div>
   );
