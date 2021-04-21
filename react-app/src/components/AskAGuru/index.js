@@ -48,7 +48,9 @@ function AskAGuru({question}) {
             <div className="down"><i className="fas fa-chevron-down"></i></div>
           </div>
         </div>
-        {currentUser && currentUser.id === question.user_id && <button onClick={deleteQuestionAAG} className="delete_AAG_button">Delete</button>}
+        <div className="delete_button_container">
+          {currentUser && currentUser.id === question.user_id && <div onClick={deleteQuestionAAG} className="delete_AAG_button"><i className="fas fa-trash-alt"></i> Delete</div>}
+        </div>
     </div>
   )
 }

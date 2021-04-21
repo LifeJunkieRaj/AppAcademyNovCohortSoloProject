@@ -59,5 +59,23 @@
 
 .cat_name {
     text-align: center;
-    font-weight: 1000;
+    font-weight: 900;
+}
+
+.delete_AAG_button {
+    padding: 5px 5px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    width: 30%;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px 10px;
+}
+.delete_button_container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }

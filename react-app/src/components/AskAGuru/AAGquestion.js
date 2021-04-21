@@ -26,19 +26,25 @@ const CreateQuestion = () => {
     return display ? (
         <div className="modal_background" onClick={hideModal}>
             <div className="modal" onClick={e => e.stopPropagation()}>
+                <h1 className="AAG_title">Ask A Guru</h1>
                 <form className="AAG_container">
-                    <textarea
+                    <label>Enter Your Question</label>
+                    <textarea className="AAG_question" 
+                      rows="5"
+                      cols="30"
+                      placeHolder="Ask Your Question Here"
                       value={body}
                       onChange={({target:{value}}) => updateBody(value)}
                       />
-                      <select  onChange={({target:{value}}) => setCategory(value)} value={category}>
+                      <label>Select A Category</label>
+                      <select className="AAG_categories" onChange={({target:{value}}) => setCategory(value)} value={category}>
                           {categoryList.map((cat, idx) => (
                               <option
                                 value = {idx + 1}
                               >{cat}</option>
                           ))}
                       </select>
-                      <button onClick={onSubmit}>Submit</button>
+                      <button className="AAG_submit" onClick={onSubmit}>Submit</button>
                 </form>
             </div>
         </div>
