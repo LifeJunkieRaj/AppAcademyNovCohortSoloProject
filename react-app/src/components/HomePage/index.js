@@ -32,7 +32,7 @@ const HomePage = () => {
               <div></div>
                 <h1 className="home_page_title">Ask A Guru</h1>
                   <div className="question_button" onClick={showModal}>
-                      Post Your Question
+                    <i class="fas fa-comment-dots"> Post Your Question</i>                      
                   </div>
                   <div className="flex_container">
             {ask_a_guru ? ask_a_guru.map(q => {

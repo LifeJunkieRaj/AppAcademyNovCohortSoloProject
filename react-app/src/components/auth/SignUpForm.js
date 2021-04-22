@@ -74,6 +74,7 @@ const SignUpForm = () => {
           placeholder="Enter First Name"
         ></input>
       </div>
+      <br></br>
       <div>
         {/* <label>User Name</label> */}
         <input
