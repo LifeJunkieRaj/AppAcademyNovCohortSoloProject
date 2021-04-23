@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/LifeJunkieRaj/FullstackSoloProjectGuruud">
-    <img src="react-app/src/site-images/Logo_-_revision_01-removebg-preview.png" alt="Logo" width="80" height="80" style="">
+    <img src="react-app/src/site-images/Logo_-_revision_01-removebg-preview.png" alt="Logo" width="300" height="250" style="">
   </a>
 
   <h3 align="center">It's Time to get GURUUD!!!</h3>
@@ -52,10 +52,10 @@
 ## About The Project
 [Click here to view Guruud live on the web!](https://guruud.herokuapp.com/)
 <br>
-   <img src="react-app/src/site-images/LandingPage.jpg"/>
-   <img src="react-app/src/site-images/LoginPage.jpg"/>
-   <img src="react-app/src/site-images/SignUp Form.jpg"/>
-   <img src="react-app/src/site-images/HomePage.jpg"/>
+   <img src="./react-app/src/site-images/LandingPage.jpg"/>
+   <img src="./react-app/src/site-images/LoginPage.jpg"/>
+   <img src="./react-app/src/site-images/SignUp Form.jpg"/>
+   <img src="./react-app/src/site-images/HomePage.jpg"/>
 </br>
 
 
@@ -138,14 +138,9 @@ Here is everything we need you to do to get started with Brewd.
    ```
 ## Obstacles
 
-### SQLAlchemy Querying
+### We were not able to query for the category ID for any given AskAGuru Question.
 
-Because of how we built our lean database, we needed to create unique ways to query data due to interdependent relationships. We defined the necessary relationships between tables and created new methods that allowed us to return information pertaining to multiple tables without running into major conflicts.
-
-
-### Likes
-
-We had issues with React updating and rendering the state of a like without refreshing our entire page. Through hours of debugging and collaboration, we realized we overcomplicated the issue from the start.
+We were able to fix the problem by creating a Python function called catsAndQs in the ask_a_guru_routes.py API which returns a dictionary that contains details related to the AskAGuru questions, Category Info, and all its comments and responses info.
 
 
 <!-- ROADMAP -->
@@ -173,7 +168,7 @@ Contributions are what make the open source community such an amazing place to b
 
 * Rajiv Hudek - [LinkedIn](https://www.linkedin.com/in/raj-hudek-026b051b1/) - [Github](https://github.com/LifeJunkieRaj)
 
-Project Link: [https://github.com/tedjanton/Brewd](https://github.com/tedjanton/Brewd)
+Project Link: [https://github.com/LifeJunkieRaj/FullstackSoloProjectGuruud](https://github.com/LifeJunkieRaj/FullstackSoloProjectGuruud)
 
 
 <!-- ACKNOWLEDGEMENTS -->
