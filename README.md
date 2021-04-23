@@ -52,10 +52,10 @@
 ## About The Project
 [Click here to view Guruud live on the web!](https://guruud.herokuapp.com/)
 <br>
-   <img src="react-app/src/site-images/LandingPage.jpg"/>
-   <img src="react-app/src/site-images/LoginPage.jpg"/>
-   <img src="react-app/src/site-images/SignUp Form.jpg"/>
-   <img src="react-app/src/site-images/HomePage.jpg"/>
+   <img src="./react-app/src/site-images/LandingPage.jpg"/>
+   <img src="./react-app/src/site-images/LoginPage.jpg"/>
+   <img src="./react-app/src/site-images/SignUp Form.jpg"/>
+   <img src="./react-app/src/site-images/HomePage.jpg"/>
 </br>
 
 
