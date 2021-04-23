@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/LifeJunkieRaj/FullstackSoloProjectGuruud">
-    <img src="react-app/src/site-images/Logo_-_revision_01-removebg-preview.png" alt="Logo" width="80" height="80" style="">
+    <img src="react-app/src/site-images/Logo_-_revision_01-removebg-preview.png" alt="Logo" width="300" height="250" style="">
   </a>
 
   <h3 align="center">It's Time to get GURUUD!!!</h3>
@@ -173,7 +173,7 @@ Contributions are what make the open source community such an amazing place to b
 
 * Rajiv Hudek - [LinkedIn](https://www.linkedin.com/in/raj-hudek-026b051b1/) - [Github](https://github.com/LifeJunkieRaj)
 
-Project Link: [https://github.com/tedjanton/Brewd](https://github.com/tedjanton/Brewd)
+Project Link: [https://github.com/LifeJunkieRaj/FullstackSoloProjectGuruud](https://github.com/LifeJunkieRaj/FullstackSoloProjectGuruud)
 
 
 <!-- ACKNOWLEDGEMENTS -->
