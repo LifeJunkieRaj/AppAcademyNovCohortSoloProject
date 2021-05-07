@@ -73,35 +73,9 @@
     cursor: pointer;
     margin: 10px 10px;
 }
-
 .delete_button_container {
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-div.rounded {
-    /* background-color: #ff0000; */
-    background-image: url("../../site-images/circle_guru_divider.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 40px;
-    width: 50px;
-    margin: 20px 0px;
-    border-radius: 10px;
-}
-
-hr.rounded {
-    background-color: #ff0000;
-    height: 4px;
-    width: 50px;
-    margin: 20px 5px;
-    border-radius: 10px;
-}
-
-.separator_container {
-    display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }

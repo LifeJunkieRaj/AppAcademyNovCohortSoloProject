@@ -25,20 +25,6 @@ def catsAndQs(q):
 @ask_a_guru_routes.route('/<int:id>/')
 @login_required
 def ask_a_guru(id):
-    print("userId:"+str(id))
-    userQuestion = AskAGuru.query.filter(AskAGuru.user_id.in_([id])).join(Category).all()
-    # userQuestionCategories = 
-    if userQuestion:
-    
-        questions = {"questions": {q.id : catsAndQs(q) for q in userQuestion}}
-        print((questions))
-        return jsonify(questions)
-    else:
-        return jsonify({"error": "No Questions Posted Yet!"}) 
-        
-@ask_a_guru_routes.route('/')
-@login_required
-def ask_a_guru_all():
     userQuestion = AskAGuru.query.join(Category).all()
     # userQuestionCategories = 
     if userQuestion:
@@ -78,19 +64,3 @@ def ask_a_guru_delete(id):
             db.session.delete(ask_to_delete)
     db.session.commit()
     return {}
-
-@ask_a_guru_routes.route('/comments_responses/<int:id>/', methods=["GET"])
-@login_required
-def ask_a_guru_user_comments_responses (id):
-    questions = AskAGuru.query.join(Category).all()
-    # filtered_questions = [question.to_dict() for question in questions for comment in (question.to_dict())["comment"] if comment["user_id"] == id]
-    filtered_questions = {}
-    for question in questions:
-        question = catsAndQs(question)
-        for comment in question["comments"]:
-            if comment["user_id"] == id:
-                filtered_questions[question["id"]]=question
-        for response in question["responses"]:
-            if response["user_id"] == id:
-                filtered_questions[question["id"]]=question
-    return jsonify({"filtered_questions": [value for key, value in filtered_questions.items()]})
