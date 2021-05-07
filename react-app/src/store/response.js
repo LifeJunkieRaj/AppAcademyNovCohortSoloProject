@@ -1,26 +1,26 @@
-const SHOW = "/comment_modal/show"
-const HIDE = "/comment_modal/hide"
-const LOAD = "/comment_modal/load";
+const SHOW = "/Response_modal/show"
+const HIDE = "/Response_modal/hide"
+const LOAD = "/Response_modal/load";
 
-const loadCommentsStore = (modal_status) => ({
+const loadResponsesStore = (modal_status) => ({
   type: LOAD,
   payload: modal_status,
 });
 
 
-export const showComments = () => ({type: SHOW})
-export const hideComments = () => ({type: HIDE})
+export const showResponses = () => ({type: SHOW})
+export const hideResponses = () => ({type: HIDE})
 
 
-export const addComment = async (user_id, ask_a_guru_id, comment) => {
-  console.log("Add Comment to question ID" + ask_a_guru_id)  
-  const response = await fetch("/api/comments/", {
+export const addResponse = async (user_id, ask_a_guru_id, response_text) => {
+  console.log("Add Response to question ID" + ask_a_guru_id)  
+  const response = await fetch("/api/responses/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         user_id,
         ask_a_guru_id,
-        comment,
+        response_text,
       }),
     });
     const data = await response.json();
@@ -28,12 +28,12 @@ export const addComment = async (user_id, ask_a_guru_id, comment) => {
 
   };
 
-  export const setQuestionNumber = (questionId) => async (dispatch) => {
-    dispatch(loadCommentsStore(questionId));
+  export const setResponseQuestionNumber = (questionId) => async (dispatch) => {
+    dispatch(loadResponsesStore(questionId));
   }
 
   const initialState = {questionNumber:-1, modal: false};
-  const commentReducer = (state=initialState, action) => {
+  const responseReducer = (state=initialState, action) => {
     let newState;
     switch (action.type){
       case LOAD:
@@ -49,4 +49,4 @@ export const addComment = async (user_id, ask_a_guru_id, comment) => {
     }
   }
 
-  export default commentReducer;
+  export default responseReducer;

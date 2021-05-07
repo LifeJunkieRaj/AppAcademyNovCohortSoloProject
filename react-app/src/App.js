@@ -8,7 +8,9 @@ import NavBar from "./components/NavBar/NavBar";
 // import ProtectedRoute from "./components/auth/ProtectedRoute";
 import User from "./components/User";
 import LandingPage from "./components/LandingPage";
-import HomePage from "./components/HomePage"
+import HomePage from "./components/HomePage";
+import SearchResultsPage from "./components/SearchResultsPage";
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,6 +31,12 @@ function App() {
         </Route>
         <Route path="/" exact={true} >
           <LandingPage />
+        </Route>
+        <Route path="/SearchResultsPage" exact={true} >
+          <SearchResultsPage />
+        </Route>
+        <Route path="/ProfilePage" exact={true} >
+          <ProfilePage />
         </Route>
         {/* <ProtectedRoute path="/users" exact={true} >
           <UsersList/>
