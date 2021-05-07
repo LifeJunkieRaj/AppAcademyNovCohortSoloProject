@@ -8,7 +8,9 @@ from .models import db, User
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.ask_a_guru_routes import ask_a_guru_routes
-
+from .api.comments_routes import comments_routes
+from .api.responses_routes import responses_routes
+from .api.nav_bar_routes import nav_bar_routes
 from .seeds import seed_commands
 
 from .config import Config
@@ -32,6 +34,9 @@ app.config.from_object(Config)
 app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(ask_a_guru_routes, url_prefix='/api/ask_a_guru')
+app.register_blueprint(comments_routes, url_prefix='/api/comments')
+app.register_blueprint(responses_routes, url_prefix='/api/responses')
+app.register_blueprint(nav_bar_routes, url_prefix='/api/search')
 db.init_app(app)
 Migrate(app, db)
 
