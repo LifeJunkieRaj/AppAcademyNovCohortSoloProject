@@ -1,18 +1,16 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { getAllQuestions, show } from "../../store/ask_a_guru";
-import AskAGuru from "../../components/AskAGuru";
-
-// import user_icon from "../../site-images/user_icon.png";
-import "./HomePage.css";
+import { show } from "../../store/ask_a_guru";
+import AskAGuru from "../AskAGuru";
+import "./SearchResultsPage.css";
 
 
 
  
-const HomePage = () => {
+const SearchResultsPage = () => {
     const dispatch = useDispatch();
-    let ask_a_guru = useSelector(state => state.questions.questions);
+    let ask_a_guru = useSelector(state => state.found.found);
     const user = useSelector(state => state.session.user);
     const commentsStore = useSelector(state => state.comments)
     const responseStore = useSelector(state => state.responses)
@@ -21,17 +19,17 @@ const HomePage = () => {
 
     const showModal = () => dispatch(show())
 
-    useEffect(() => {
-        user && dispatch(getAllQuestions())
-    }, [dispatch, user, commentsStore, responseStore])
+    // useEffect(() => {
+    //     user && dispatch(getCurrentUserQuestions(user.id))
+    // }, [dispatch, user, commentsStore, responseStore])
 
     if (userLoaded && !user) return <Redirect to="/"></Redirect>
         
     return  (
         
-        <div className="image_container">
+        <div className="search_page_image_container">
               <div></div>
-                <h1 className="home_page_title">Ask A Guru</h1>
+                <h1 className="home_page_title">Search Results</h1>
                   <div className="question_button" onClick={showModal}>
                     <i class="fas fa-comment-dots"> Post Your Question</i>                      
                   </div>
@@ -47,6 +45,4 @@ const HomePage = () => {
     
 }
 
-export default HomePage;
-
-
+export default SearchResultsPage;

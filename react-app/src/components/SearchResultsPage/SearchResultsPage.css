@@ -1,0 +1,5 @@
+.search_page_image_container {
+    background-image: url("../../site-images/SearchPageBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

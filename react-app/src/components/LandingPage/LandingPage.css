@@ -28,6 +28,7 @@
 .landing-button-div:hover {
     background-color: white;
     color: black;
+    cursor: pointer;
 }
 
 

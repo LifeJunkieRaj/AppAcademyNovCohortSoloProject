@@ -30,6 +30,17 @@ def seed_users():
                 password='password', guru = True if randrange(0, 10, 1) > 4 else False)
     
     db.session.add(demo)
+    
+   
+    generate_users()
+    db.session.commit()
+    
+def seed_second_user():
+    
+    demo2 = User(username='Demo2', first_name='Demo2', last_name='Lition', email='demo2@lition.com',
+                password='password', guru = False)
+    
+    db.session.add(demo2)
     generate_users()
     db.session.commit()
     

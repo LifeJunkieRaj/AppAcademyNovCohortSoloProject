@@ -79,7 +79,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-Here is everything we need you to do to get started with Brewd.
+Here is everything we need you to do to get started with Guruud.
 
   * npm
   ```sh
@@ -94,7 +94,7 @@ Here is everything we need you to do to get started with Brewd.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/tedjanton/Brewd
+   git clone https://github.com/LifeJunkieRaj/FullstackSoloProjectGuruud
    ```
 2. Install NPM packages in the React App
    ```sh

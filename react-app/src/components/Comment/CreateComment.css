@@ -1,5 +1,5 @@
 .modal_background {
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    /* background-color: rgba(0, 0, 0, 0.3); */
 }
 
 .modal {
@@ -20,7 +20,7 @@
     border: 1.5px solid red;
 }
 
-.AAG_container {
+.comment_modal_container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -37,28 +37,28 @@ label {
 
 }
 
-.AAG_question, .AAG_categories, AAG_submit {
+.comment_modal_question, .comment_modal_categories, comment_modal_submit {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.AAG_question, .AAG_categories {
+.comment_modal_question, .comment_modal_categories {
     width: 100%;
     border-radius: 7px;
     font-size: 1.15rem;
     padding: 5px 15px;
 }
 
-.AAG_question {
+.comment_modal_question {
     width: 90%;
 }
 
-.AAG_title {
+.comment_modal_title {
     text-align: center;
     font-size: 2.5rem;
 }
 
-.AAG_submit {
+.comment_modal_submit {
     padding: 5px 15px;
     font-size: 1.15rem;
     border-radius: 7px;
