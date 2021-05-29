@@ -43,4 +43,31 @@ a {
 .searchBar input {
     width:300px
 }
+.searchBarContainer{
+    display: flex;
+    align-items: center;
+}
+.fa-search{
+    background: black;
+    color: white;
+    font-size: 1.1rem;
+    padding: 3px;
+}
 
+.menuFlexContainer{
+    display: flex;
+    align-items: center;
+    
+}
+.menuHeader{
+    background: black;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 3px;
+}
+.fa-caret-square-down{
+    margin: 5px;
+    background-color: white;
+    color:black;
+    
+}

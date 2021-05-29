@@ -22,7 +22,9 @@ const HomePage = () => {
     const showModal = () => dispatch(show())
 
     useEffect(() => {
-        user && dispatch(getAllQuestions())
+    
+
+      dispatch(getAllQuestions())
     }, [dispatch, user, commentsStore, responseStore])
 
     if (userLoaded && !user) return <Redirect to="/"></Redirect>

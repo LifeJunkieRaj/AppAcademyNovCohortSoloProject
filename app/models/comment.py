@@ -20,4 +20,5 @@ class Comment(db.Model):
             "comment": self.comment,
             "user_id": self.user_id,
             "username": self.user.username,
+            'guru': self.user.guru
         }

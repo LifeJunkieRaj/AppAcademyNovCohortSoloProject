@@ -2,6 +2,7 @@ const LOAD = "/ask_a_guru/load";
 const SHOW = "/ask_a_guru/show";
 const HIDE = "/ask_a_guru/hide";
 const LOADCR = "/ask_a_guru/loadcr";
+const EDITCOMMENT= "/ask_a_guru/editComment";
 const load = (questions) => ({
     type: LOAD,
     payload: questions,
@@ -37,13 +38,13 @@ export const getAllQuestions = () => async (dispatch) => {
     console.log(response.status, response.ok)
     if (response.ok) {
         const {questions} = await response.json();
-        console.log('Here are the questions ~~~~~~>', questions)
+        
         dispatch(load(questions));
     }
 };
 
 export const createQuestion = async (text_body, category, user_id) => {
-    console.log(user_id, "IM OVER HERE <=============")
+   
     const response = await fetch('/api/ask_a_guru/', {
         headers: {
             "Content-Type": "application/json",
@@ -76,6 +77,9 @@ export const getQuestionsByCommentsAndResponses = (userId) => async (dispatch) =
     }
 };
 
+
+
+
 const initialState = {questions: [], filtered_questions: [], modal: false};
 const askAGuruReducer = (state=initialState, action) => {
     let newState;
@@ -92,6 +96,7 @@ const askAGuruReducer = (state=initialState, action) => {
             return {...state, modal:true}
         case HIDE:
             return {...state, modal:false}
+        
         default:
             return state;
     }

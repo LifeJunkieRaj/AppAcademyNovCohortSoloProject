@@ -11,7 +11,7 @@ import LandingPage from "./components/LandingPage";
 import HomePage from "./components/HomePage";
 import SearchResultsPage from "./components/SearchResultsPage";
 import ProfilePage from "./components/ProfilePage";
-
+import Footer from "./components/Footer";
 function App() {
   const dispatch = useDispatch();
   
@@ -20,6 +20,7 @@ function App() {
   }, [dispatch]);
 
   return (
+    <>
     <BrowserRouter>
       <NavBar />
        <Switch>
@@ -49,6 +50,8 @@ function App() {
         </Route> 
       </Switch>
     </BrowserRouter>
+    <Footer />
+      </>
   );
 }
 

@@ -1,13 +1,46 @@
 .user_id_comm_highlight {
     color: blue;
-    margin-bottom: 20px;
+    margin:1px
 }
-
+.CommentsUserName{
+    margin:1px
+}
+.textContent{
+    margin:1px;    
+}
 .comment_container {
-    margin-bottom: 50px;
+    margin-bottom: 5px;
 }
 
 .comm_h1 {
     margin: 0;
 }
 
+.edit-button-container, .delete-button-container{
+   display: flex;
+   justify-content:flex-end;
+   margin:3px
+   
+}
+.separator_container{
+    margin: 20px 0;
+}
+
+div.rounded{
+    margin: 0;
+}
+.editButton, .deleteButton{
+    text-align: center;
+    width:70px;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin:3px;
+}
+
+.commentFlexContainer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center
+}

@@ -105,3 +105,12 @@ hr.rounded {
     justify-content: center;
     align-items: center;
 }
+.askAGuruFlexContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fa-award{
+    font-size:30px;
+    color:black
+}

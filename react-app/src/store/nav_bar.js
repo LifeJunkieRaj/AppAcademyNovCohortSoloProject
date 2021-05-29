@@ -1,21 +1,21 @@
 const GET = "search/get"
 
-const load = (foundItems) => ({
+const load = (query,foundItems) => ({
     type: GET,
-    foundItems
+    payload:{query,foundItems}
 })
 
 export const search = (query) => async (dispatch) => {
     const res = await fetch(`/api/search/${query}/`)
     const foundItems = await res.json()
-    dispatch(load(foundItems.foundItems))
+    dispatch(load(query,foundItems.foundItems))
     return foundItems
 }
 
-const searchReducer = (state = {}, action) => {
+const searchReducer = (state = {found:{},query:""}, action) => {
     switch (action.type) {
         case GET:
-            return {...state, found: action.foundItems}
+            return {...state, found: action.payload.foundItems, query:action.payload.query}
         default: 
             return state
     }

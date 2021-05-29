@@ -25,3 +25,30 @@ def add_comment():
     db.session.commit()
     return new_comment.to_dict()
 
+
+@comments_routes.route('/<int:id>/edit', methods=["POST"])
+@login_required
+def change_comment(id):
+    print(id)
+    comment= Comment.query.get(id)
+    if comment==None:
+            return jsonify({"error":"unable to retrieve the comment"})
+    form = CommentForm()
+    print(form["csrf_token"])
+    form.data['csrf_token'] = request.cookies['csrf_token']
+    print(form.data)
+    data=request.json
+    
+    comment.comment= data['text_body']
+    db.session.commit()
+    return comment.to_dict()
+
+
+
+@comments_routes.route('/<int:id>/delete', methods=["DELETE"])
+@login_required
+def remove_comment(id):
+    comment= Comment.query.get(id)
+    db.session.delete(comment)
+    db.session.commit()
+    return jsonify({"ok": "success"})

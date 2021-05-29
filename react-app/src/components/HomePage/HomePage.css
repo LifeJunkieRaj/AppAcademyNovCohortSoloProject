@@ -1,8 +1,7 @@
 .image_container{
-    background-image: url("../../site-images/blurry_office.jpg");
-    width: 100%;
-    background-repeat: repeat-y;
-    background-size: cover;
+    background-image: url("../../site-images/brad-stallcup-_Js9c6w_FDk-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-color: black;    
 }
 
 .flex_container {

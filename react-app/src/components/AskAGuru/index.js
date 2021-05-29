@@ -45,8 +45,9 @@ function AskAGuru({question}) {
           Description: {question.description}
         </div>
       </div>
-      <div className="guru_id_highlight">
-        User ID: {question.user_id} ASKED:
+      <div className="guru_id_highlight askAGuruFlexContainer">
+        <p>User: {question.username} ASKED </p>
+        {question.guru && <i className="fas fa-award"></i>}
       </div>
       <div className="question_content">
         {question.question}

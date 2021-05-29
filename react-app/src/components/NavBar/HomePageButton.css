@@ -1,0 +1,7 @@
+.home_page_button {
+    background-color: black;
+    color: white;
+    padding: 7px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid grey;
+}

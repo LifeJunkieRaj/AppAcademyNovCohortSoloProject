@@ -17,6 +17,7 @@ def catsAndQs(q):
         "idCat": q.category.id,
         "name": q.category.name,
         "username": q.user.username,
+        "guru":q.user.guru,
         "description": q.category.description,
         "comments": [comment.to_dict() for comment in q.comments],
         "responses": [response.to_dict() for response in q.responses]
