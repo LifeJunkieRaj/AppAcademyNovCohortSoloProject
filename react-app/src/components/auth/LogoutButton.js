@@ -9,7 +9,7 @@ const LogoutButton = () => {
   const history = useHistory();
 
   const onLogout = (e) => {
-   
+    document.querySelector(".navbar_menu").style.display="none";
     dispatch(logout());
     
   };

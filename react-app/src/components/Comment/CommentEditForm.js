@@ -1,33 +1,43 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { hideComments, comment, addComment } from "../../store/comment"
-import "./CreateComment.css"
-import getCurrentUserQuestions from "../../store/ask_a_guru";
+import {hideCommentEditForm, editComment} from "../../store/comment"
 
-const CreateComment = ({ question_id }) => {
+
+const CommentsEditForm = () => {
     const dispatch = useDispatch();
-    const hideModal = () => dispatch(hideComments())
-
-    const display = useSelector(state => state.comments.modal)
+    const hideModal = () => dispatch(hideCommentEditForm())
+    const comment= useSelector(state =>state.comments.selectedComment)
+    const display = useSelector(state => state.comments.editCommentModalStatus)
+    
+    
     const sessionUser = useSelector(state => state.session.user)
     const [body, updateBody] = useState("");
+   
     const [errors, setErrors] = useState([]);
+    useEffect(()=>{
+        console.log(comment.comment_text);
+        updateBody(comment.comment_text);
+    }, [dispatch,comment])
+
     const onSubmit = (e) => {
-        e.preventDefault()
-        addComment(sessionUser.id, question_id, body)
-            .then(() => {
-                dispatch(hideComments())
-                // dispatch(getCurrentUserQuestions(sessionUser.id))
-                
-            })
-            .catch((err) => console.log(err))
-            updateBody("")
+      e.preventDefault();
+       
+       
+        dispatch(editComment(comment.id, body));
+        updateBody("")
+        dispatch(hideModal());
+        
+
     }
     
+
     return display ? (
         <div className="modal_background" onClick={hideModal}>
             <div className="modal" onClick={e => e.stopPropagation()}>
-                <h1 className="comment_modal_title">Add Your Comment</h1>
+            
+
+
+                <h1 className="comment_modal_title">Edit the comment</h1>
                 <form className="comment_modal_container">
                     <label>Enter Your Comment</label>
                     <textarea className="comment_modal_question" 
@@ -44,4 +54,5 @@ const CreateComment = ({ question_id }) => {
     ):null;
 }
 
-export default CreateComment;
+export default CommentsEditForm;
+

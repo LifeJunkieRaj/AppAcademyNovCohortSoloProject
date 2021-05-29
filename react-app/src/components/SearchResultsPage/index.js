@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import { show } from "../../store/ask_a_guru";
 import AskAGuru from "../AskAGuru";
 import "./SearchResultsPage.css";
+import { search } from '../../store/nav_bar';
 
 
 
@@ -11,6 +12,7 @@ import "./SearchResultsPage.css";
 const SearchResultsPage = () => {
     const dispatch = useDispatch();
     let ask_a_guru = useSelector(state => state.found.found);
+    let query=useSelector(state=>state.found.query);
     const user = useSelector(state => state.session.user);
     const commentsStore = useSelector(state => state.comments)
     const responseStore = useSelector(state => state.responses)
@@ -19,9 +21,11 @@ const SearchResultsPage = () => {
 
     const showModal = () => dispatch(show())
 
-    // useEffect(() => {
-    //     user && dispatch(getCurrentUserQuestions(user.id))
-    // }, [dispatch, user, commentsStore, responseStore])
+    
+    useEffect(() => {
+      dispatch(search(query))
+      
+    }, [dispatch, user, commentsStore, responseStore])
 
     if (userLoaded && !user) return <Redirect to="/"></Redirect>
         

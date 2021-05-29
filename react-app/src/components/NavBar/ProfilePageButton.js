@@ -6,6 +6,7 @@ const ProfilePageButton = () => {
   const history = useHistory();
 
   const toProfilePage = (e) => {
+    document.querySelector(".navbar_menu").style.display="none";
     history.push("/ProfilePage")
     
   };
