@@ -4,7 +4,9 @@
 }
 
 .profile_page_image_container {
-    background:url("../../site-images/chris-parmiter-3Suv0kb4_FU-unsplash.jpg")
+    background:url("../../site-images/chris-parmiter-3Suv0kb4_FU-unsplash.jpg");
+    background-size: cover;
+
 }
 
 .user_info {

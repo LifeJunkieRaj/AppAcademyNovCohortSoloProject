@@ -34,7 +34,8 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     return <Redirect to="/"/>;
   }
 
-  return (
+   return (
+   
     <div className="login_form_container">
     <form className="login_form" onSubmit={onLogin}>
       <h1>Guru Time</h1>
