@@ -32,7 +32,7 @@ const LandingPage = ({ authenticated }) => {
                             <div className="landing-site-title">
                                 <div className="logo"></div>
                             </div>
-                            <div className="category_container">
+                            {/* <div className="category_container">
                                <ul className="cat_flex_container">
                                     <li>
                                         <NavLink to="/" exact={true}><i className="fas fa-sign"></i>  Real Estate</NavLink>
@@ -67,7 +67,7 @@ const LandingPage = ({ authenticated }) => {
                                         <NavLink to="/" exact={true}><i class="fas fa-globe"></i>  Entrepreneurship 101</NavLink>
                                     </li>
                                </ul>
-                            </div>                         
+                            </div>                          */}
                         </div>
                         <div className="landing-message">
                                 <h3>The only place online where the budding entrepreneurs of tomorrow, can get the experienced advice from the successful entrepreneurs of yesterday and today!</h3>

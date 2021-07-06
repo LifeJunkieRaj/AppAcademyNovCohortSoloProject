@@ -39,6 +39,7 @@
 
 .landing-container {
     display: flex;
+    align-items: center;
     flex-direction: row;
     justify-content: center;
     margin: 1em 0;
@@ -78,12 +79,16 @@
 }
 
 .landing-tagline, .landing-message {
+    display: flex;
+    align-items: flex-end;
     width: 30%;
         
 }
 
 .landing-tagline h3 {
-    text-align: left;
+    display: flex;
+    align-items: flex-end;
+    /* text-align: left; */
 }
 
 .landing-message h3 {
